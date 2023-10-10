@@ -1,9 +1,17 @@
+x = (1)
 
+for i in x:
+  numero = int(input("Da quale numero vuoi iniziare il conto alla rovescia? "))
 
-numero = int(input("Da quale numero vuoi iniziare il conto alla rovescia? "))
-
-for i in range(numero, -1, -1):  # L'intervallo parte dal numero inserito e va fino a 0
+  for i in range(numero, -1, -1):  # L'intervallo parte dal numero inserito e va fino a 0
     print(i)
+  y=input("vuoi ripetere? si o no")
+  if y.equal("si"):
+     x.add(2)
+  else:
+     x = ()
+
+      
 
 
 
