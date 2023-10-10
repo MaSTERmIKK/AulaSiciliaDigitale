@@ -1,0 +1,75 @@
+Serie di condizioni annidate:
+
+input_value = input("Inserisci un valore: ")
+
+if input_value == "A":
+    inner_input = input("Inserisci un secondo valore: ")
+    if inner_input == "B":
+        innermost_input = input("Inserisci un terzo valore: ")
+        if innermost_input == "C":
+            print("Hai passato tutti i livelli!")
+        else:
+            print("Terzo livello non superato.")
+    else:
+        print("Secondo livello non superato.")
+else:
+    print("Primo livello non superato.")
+
+
+
+
+If con vari elif per gestione CRUD:
+
+lista = []
+
+while True:
+    print("\nMenu:")
+    print("1. Aggiungi")
+    print("2. Mostra")
+    print("3. Rimuovi")
+    print("4. Elimina tutto")
+    print("5. Esci")
+
+    scelta = input("Scegli un'opzione: ")
+
+    if scelta == "1":
+        elemento = input("Inserisci la stringa da aggiungere: ")
+        lista.append(elemento)
+        print("Elemento aggiunto!")
+    elif scelta == "2":
+        print(lista)
+    elif scelta == "3":
+        elemento = input("Inserisci la stringa da rimuovere: ")
+        if elemento in lista:
+            lista.remove(elemento)
+            print("Elemento rimosso!")
+        else:
+            print("Elemento non trovato.")
+    elif scelta == "4":
+        lista.clear()
+        print("Lista svuotata!")
+    elif scelta == "5":
+        break
+    else:
+        print("Opzione non valida.")
+If con creazione e controllo account:
+
+accounts = {}
+current_id = 1
+
+action = input("Vuoi creare un account (digita 'crea') o accedere (digita 'accedi')?: ")
+
+if action == "crea":
+    nome = input("Inserisci il tuo nome: ")
+    password = input("Crea una password: ")
+    accounts[nome] = {'password': password, 'id': current_id}
+    current_id += 1
+    print(f"Account creato con successo! Il tuo ID è {accounts[nome]['id']}")
+else:
+    nome = input("Inserisci il tuo nome: ")
+    password = input("Inserisci la password: ")
+    
+    if nome in accounts and accounts[nome]['password'] == password:
+        print(f"Accesso riuscito! Il tuo ID è {accounts[nome]['id']}")
+    else:
+        print("Nome utente o password non validi.")
