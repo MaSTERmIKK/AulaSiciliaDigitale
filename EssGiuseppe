@@ -1,0 +1,33 @@
+n1=float(input("Inserisci il primo numero "))
+
+n2=float(input("inserisci il secondo numero "))
+
+op=input("Operatore (*+/-)")
+
+if op=="*":
+
+    print ("Risultato moltiplicazione "+str(n1*n2) )
+
+elif op=="+":
+
+    print ("Risultato somma  "+str(n1+n2) )
+
+elif op=="-":
+
+    print ("Risultato sottrazione "+str(n1-n2) )
+
+elif op=="/":
+
+ try:
+
+    print("Risultato divisione "+str(n1/n2))
+
+ except ZeroDivisionError:
+
+   print("attenzione, divisione per zero")
+
+ 
+
+else:
+
+ print ("operatore non valido")
