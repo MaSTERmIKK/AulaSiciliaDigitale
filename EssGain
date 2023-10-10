@@ -17,3 +17,7 @@ if scelta == "Diavolo" :
 elif scelta == "Paperino" :
 
     print ("Buona visione")  
+
+else:
+
+   print( "non hai scelto nessun film" )
