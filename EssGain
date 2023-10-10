@@ -1,0 +1,19 @@
+età =int(input("Benvenuto, inserisci la tua età: "))
+
+print (età)
+
+scelta = input ("scegli il film, Diavolo o Paperino?")
+
+if scelta == "Diavolo" :
+
+    if età > 17:
+
+         print ("Buona visione")
+
+    else :
+
+        print ("Va vivitu u latti")  
+
+elif scelta == "Paperino" :
+
+    print ("Buona visione")  
