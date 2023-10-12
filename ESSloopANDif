@@ -1,0 +1,49 @@
+1. Numeri pari e dispari
+
+
+numero = int(input("Inserisci un numero: "))
+
+if numero % 2 == 0:
+    print("Il numero è pari.")
+else:
+    print("Il numero è dispari.")
+
+
+
+
+
+2. Numeri primi in un intervallo
+
+
+
+
+inizio = int(input("Inserisci il numero di inizio dell'intervallo: "))
+fine = int(input("Inserisci il numero di fine dell'intervallo: "))
+
+for num in range(inizio, fine + 1):
+    if num > 1:  # 0 e 1 non sono primi
+        for i in range(2, num):
+            if num % i == 0:
+                break
+        else:  # Questo blocco else appartiene al ciclo for, non all'if
+            print(num)
+
+
+
+
+3. Fattori comuni
+
+
+num1 = int(input("Inserisci il primo numero: "))
+num2 = int(input("Inserisci il secondo numero: "))
+
+fattori_comuni = []
+
+for i in range(2, min(num1, num2) + 1):
+    if num1 % i == 0 and num2 % i == 0:
+        fattori_comuni.append(i)
+
+if fattori_comuni:
+    print("Fattori comuni:", fattori_comuni)
+else:
+    print("I numeri sono coprimi.")
