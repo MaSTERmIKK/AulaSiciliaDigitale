@@ -1,0 +1,38 @@
+1. Indovina il numero
+
+python
+Copy code
+import random
+
+def gioco_indovina_numero():
+    numero_da_indovinare = random.randint(1, 100)
+    tentativi = 0
+
+    while True:
+        guess = int(input("Indovina un numero tra 1 e 100 (o scrivi '0' per uscire): "))
+        tentativi += 1
+
+        if guess == 0:
+            print(f"Hai rinunciato dopo {tentativi} tentativi. Il numero era {numero_da_indovinare}.")
+            break
+        elif guess < numero_da_indovinare:
+            print("Il numero da indovinare è più alto!")
+        elif guess > numero_da_indovinare:
+            print("Il numero da indovinare è più basso!")
+        else:
+            print(f"Complimenti! Hai indovinato il numero {numero_da_indovinare} in {tentativi} tentativi!")
+            break
+
+gioco_indovina_numero()
+2. Sequenza di Fibonacci fino a N
+
+python
+Copy code
+def fibonacci_fino_a_n(n):
+    a, b = 0, 1
+    while a <= n:
+        print(a, end=' ')
+        a, b = b, a + b
+
+limite = int(input("Inserisci un numero N: "))
+fibonacci_fino_a_n(limite)
