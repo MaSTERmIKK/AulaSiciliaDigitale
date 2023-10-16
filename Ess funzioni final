@@ -1,0 +1,54 @@
+def area_triangolo(base, altezza):
+    return 0.5 * base * altezza
+
+# Test
+print(area_triangolo(10, 5))  # Dovrebbe stampare 25.0
+
+
+
+def primo_o_no(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Test
+print(primo_o_no(2))    # Dovrebbe stampare True
+print(primo_o_no(4))    # Dovrebbe stampare False
+print(primo_o_no(17))   # Dovrebbe stampare True
+
+
+
+
+def comprimi_stringa(s):
+    if not s:
+        return ""
+
+    compressa = []
+    conteggio = 1
+    carattere_corrente = s[0]
+
+    for char in s[1:]:
+        if char == carattere_corrente:
+            conteggio += 1
+        else:
+            compressa.append(carattere_corrente + str(conteggio))
+            conteggio = 1
+            carattere_corrente = char
+
+    compressa.append(carattere_corrente + str(conteggio))
+    
+    risultato = ''.join(compressa)
+    if len(risultato) < len(s):
+        return risultato
+    else:
+        return s
+
+# Test
+print(comprimi_stringa("aaabbc"))       # Dovrebbe stampare "a3b2c1"
+print(comprimi_stringa("abc"))          # Dovrebbe stampare "abc" poiché la compressione non riduce la dimensione
+print(comprimi_stringa("aabbcc"))       # Dovrebbe stampare "aabbcc" poiché la compressione non riduce la dimensione
+
+
