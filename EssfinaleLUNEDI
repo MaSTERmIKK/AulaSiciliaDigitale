@@ -1,0 +1,56 @@
+class ContatoreNumeriPrimi:
+    def __init__(self):
+        self.numeri_primi = []
+
+    def aggiungi_numero(self, numero):
+        if self._e_primo(numero) and numero not in self.numeri_primi:
+            self.numeri_primi.append(numero)
+
+    def visualizza_numeri(self):
+        return self.numeri_primi
+
+    def _e_primo(self, n):
+        if n <= 1:
+            return False
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+
+class Utente:
+    def __init__(self, nome, password):
+        self.nome = nome
+        self.password = password
+        self.contatore = ContatoreNumeriPrimi()
+
+    def accesso(self, nome, password):
+        if self.nome == nome and self.password == password:
+            return True
+        return False
+
+
+# Creazione dell'account utente
+nome = input("Inserisci il tuo nome: ")
+password = input("Inserisci la tua password: ")
+utente = Utente(nome, password)
+
+# Accesso all'account
+nome_accesso = input("Inserisci il tuo nome per l'accesso: ")
+password_accesso = input("Inserisci la tua password per l'accesso: ")
+
+if utente.accesso(nome_accesso, password_accesso):
+    print("Accesso effettuato con successo!")
+    
+    while True:
+        scelta = input("Vuoi 'aggiungere' un numero primo, 'vedere' i numeri primi inseriti o 'uscire'? ")
+
+        if scelta == 'aggiungere':
+            numero = int(input("Inserisci un numero primo: "))
+            utente.contatore.aggiungi_numero(numero)
+        elif scelta == 'vedere':
+            print(utente.contatore.visualizza_numeri())
+        elif scelta == 'uscire':
+            break
+else:
+    print("Nome utente o password errati!")
