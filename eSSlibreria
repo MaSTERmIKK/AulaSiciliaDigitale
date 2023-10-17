@@ -34,3 +34,14 @@ biblioteca.aggiungi_libro(libro1)
 biblioteca.aggiungi_libro(libro2)
 
 biblioteca.mostra_catalogo()
+
+
+
+
+# def rimuovi_libro(self, isbn):
+#        lstart=len(self.catalogo)
+#        self.catalogo = [libro for libro in self.catalogo if libro.isbn != isbn]
+#        if len(self.catalogo)<lstart:
+   #         return f"Libro con ISBN {isbn} rimosso con successo."
+#        else:
+    #        return f"Nessun libro con ISBN {isbn} trovato."
