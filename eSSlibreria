@@ -1,0 +1,36 @@
+class Libro:
+    def __init__(self, titolo, autore, isbn):
+        self.titolo = titolo
+        self.autore = autore
+        self.isbn = isbn
+
+    def descrizione(self):
+        return f"Titolo: {self.titolo}, Autore: {self.autore}, ISBN: {self.isbn}"
+
+
+class Libreria:
+    def __init__(self):
+        self.catalogo = []
+
+    def aggiungi_libro(self, libro):
+        self.catalogo.append(libro)
+
+    def rimuovi_libro(self, isbn):
+        self.catalogo = [libro for libro in self.catalogo if libro.isbn != isbn]
+
+    def cerca_per_titolo(self, titolo):
+        return [libro for libro in self.catalogo if libro.titolo == titolo]
+
+    def mostra_catalogo(self):
+        for libro in self.catalogo:
+            print(libro.descrizione())
+
+# Test:
+libro1 = Libro("Il Piccolo Principe", "Antoine de Saint-Exupéry", "1234567890")
+libro2 = Libro("1984", "George Orwell", "0987654321")
+
+biblioteca = Libreria()
+biblioteca.aggiungi_libro(libro1)
+biblioteca.aggiungi_libro(libro2)
+
+biblioteca.mostra_catalogo()
