@@ -1,0 +1,31 @@
+import math
+
+class Utente:
+    def __init__(self, nome_utente, password):
+        self.nome_utente = nome_utente
+        self.password = password
+
+    def autenticazione(self):
+        while True:
+            input_utente = input("Inserisci nome utente: ")
+            input_password = input("Inserisci password: ")
+            if input_utente == self.nome_utente and input_password == self.password:
+                print("Accesso riuscito!")
+                break
+            else:
+                print("Accesso fallito. Riprova.")
+
+if __name__ == "__main__":
+    nome_utente = input("Crea un nome utente: ")
+    password = input("Crea una password: ")
+    
+    utente = Utente(nome_utente, password)
+    utente.autenticazione()
+    
+    numero = float(input("Inserisci un numero positivo: "))
+
+    if numero >= 0:
+        radice_quadrata = math.sqrt(numero)
+        print(f"La radice quadrata di {numero} è {radice_quadrata:.2f}")
+    else:
+        print("Errore: Inserisci un numero positivo.")
