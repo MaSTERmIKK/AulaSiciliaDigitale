@@ -31,3 +31,75 @@ moto = Moto("Yamaha", "YZF-R1", "2022", "sport")
 
 print(auto.presentati())
 print(moto.presentati())
+
+
+
+
+----------------------------------------------------
+
+
+
+
+class Veicolo:
+
+    def __init__(self, marca, modello, anno_di_produzione):
+
+        self.marca = marca
+
+        self.modello = modello
+
+        self.anno_di_produzione = anno_di_produzione
+
+ 
+
+    def presentati(self):
+
+        return f"Sono un modello della marca {self.marca} prodotto nel {self.anno_di_produzione}."
+
+ 
+
+class Automobile(Veicolo):
+
+    def __init__(self, marca, modello, anno_di_produzione, numero_di_porte):
+
+        super().__init__(marca, modello, anno_di_produzione)
+
+        self.numero_di_porte = numero_di_porte
+
+ 
+
+    def presentati(self):
+
+        return f"Sono un'automobile di marca {self.marca}, modello {self.modello}, prodotta nel {self.anno_di_produzione} e ho {self.numero_di_porte} porte."
+
+ 
+
+class Moto(Veicolo):
+
+    def __init__(self, marca, modello, anno_di_produzione, tipo):
+
+        super().__init__(marca, modello, anno_di_produzione)
+
+        self.tipo = tipo
+
+ 
+
+    def presentati(self):
+
+        return f"Sono una moto di marca {self.marca}, modello {self.modello}, prodotta nel {self.anno_di_produzione} di tipo {self.tipo}."
+
+ 
+
+ 
+
+automobile = Automobile("Ferrari", "Testarossa", 2023, 3)
+
+moto = Moto("Piaggio", "Lberty", 2020, "Touring")
+
+ 
+
+print(automobile.presentati())
+
+print(moto.presentati())
+
+ 
